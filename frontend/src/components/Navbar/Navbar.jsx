@@ -6,39 +6,35 @@ import { StoreContext } from "../../context/StoreContext";
 
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
-  const [fix, setFix] = useState(false);
-
-  const fixHeader = () => {
-    if (window.scrollY >= 100) {
-      setFix(true);
-    } else {
-      setFix(false);
-    }
-  };
-
-  window.addEventListener("scroll", fixHeader);
 
   const { getTotalCartAmount } = useContext(StoreContext);
 
   return (
-    <div className={fix ? "navbar fixed" : "navbar"}>
+    <div className="navbar fixed">
       <Link to={"/"}>
         <img src={assets.logo} alt="" className="logo" />
       </Link>
       <ul className="navbar-menu">
-        <Link
+        <a href="#home"
           to={"/"}
           onCack={() => setMenu("home")}
           className={menu === "home" ? "active" : ""}
         >
           home
-        </Link>
+        </a>
         <a
           href="#explore-menu"
           onCack={() => setMenu("menu")}
           className={menu === "menu" ? "active" : ""}
         >
           menu
+        </a>
+        <a
+          href="#feedback"
+          onCack={() => setMenu("feedback")}
+          className={menu === "feedback" ? "active" : ""}
+        >
+          Testimonials
         </a>
         <a
           href="#app-download"
@@ -48,7 +44,7 @@ const Navbar = ({ setShowLogin }) => {
           mobile-app
         </a>
         <a
-          href="#footer"
+          href="#contact"
           onCack={() => setMenu("contact-us")}
           className={menu === "contact-us" ? "active" : ""}
         >

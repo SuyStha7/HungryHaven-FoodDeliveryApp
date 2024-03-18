@@ -6,13 +6,16 @@ import Cart from "./pages/Cart/Cart";
 import Placeorder from "./pages/PlaceOrder/PlaceOrder";
 import Footer from "./components/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
+import Headroom from "react-headroom";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
   return (
     <>
       {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
-      <Navbar setShowLogin={setShowLogin} />
+      <Headroom>
+        <Navbar setShowLogin={setShowLogin} />
+      </Headroom>
       <div className="app">
         <Routes>
           <Route path="/" element={<Home />} />

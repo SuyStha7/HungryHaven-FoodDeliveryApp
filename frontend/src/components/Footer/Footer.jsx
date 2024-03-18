@@ -14,11 +14,6 @@ const Footer = () => {
             asperiores, saepe dolore non obcaecati accusamus neque, tempore
             incidunt architecto laboriosam sint placeat.
           </p>
-          <div className="footer-social-icon">
-            <img src={assets.facebook_icon} alt="" />
-            <img src={assets.twitter_icon} alt="" />
-            <img src={assets.linkedin_icon} alt="" />
-          </div>
         </div>
         <div className="footer-center">
           <h2>Company</h2>
@@ -34,8 +29,12 @@ const Footer = () => {
           <ul>
             <li>+1-221-356-122</li>
             <li>contact@freshfood.com</li>
-            <input type="email" placeholder="Enter email address" className="email"/>
           </ul>
+          <div className="footer-social-icon">
+            <img src={assets.facebook_icon} alt="" />
+            <img src={assets.twitter_icon} alt="" />
+            <img src={assets.linkedin_icon} alt="" />
+          </div>
         </div>
       </div>
       <hr />
